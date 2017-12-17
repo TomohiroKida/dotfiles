@@ -57,4 +57,5 @@ set tabstop=4
 set virtualedit=block
 
 "colorscheme hybrid
+"set t_Co=256
 syntax on
