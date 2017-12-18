@@ -31,11 +31,14 @@ cnoremap <C-p> <UP>
 
 set autoread
 set background=dark
+set backup
+set backupdir=~/.vim/backup
 set clipboard=unnamed,autoselect
 set cmdheight=2
 set colorcolumn=80
 set cursorcolumn
 set cursorline
+set directory=~/.vim/backup
 set encoding=utf-8
 set expandtab
 set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
@@ -43,8 +46,6 @@ set fileformats=unix,dos,mac
 set hlsearch
 set laststatus=2
 set mouse=a
-set nobackup
-set noswapfile
 set nrformats+=alpha
 set nrformats-=octal
 set number
@@ -53,6 +54,7 @@ set showcmd
 set showmatch
 set smartindent
 set statusline=%F%r%h
+set swapfile
 set tabstop=4
 set virtualedit=block
 
