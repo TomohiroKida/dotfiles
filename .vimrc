@@ -27,7 +27,10 @@ nnoremap k gk
 cnoremap <C-b> <Left>
 cnoremap <C-f> <Right>
 cnoremap <C-n> <Down>
-cnoremap <C-p> <UP>
+cnoremap <C-p> <Up>
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
+cnoremap <C-d> <Del>
 
 set autoread
 set background=dark
