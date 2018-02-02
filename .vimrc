@@ -12,13 +12,14 @@ call dein#add('thinca/vim-quickrun')
 call dein#add('kannokanno/previm')
 call dein#add('tyru/open-browser.vim')
 call dein#add('tpope/vim-markdown')
+call dein#add('vhda/verilog_systemverilog.vim')
 
 filetype plugin indent on
 
 let g:quickrun_config = {'*': {'split': ''}}
 
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-let g:previm_open_cmd = 'firefox'
+let g:previm_open_cmd = 'firefox '
 
 nnoremap j gj
 nnoremap k gk
@@ -32,13 +33,13 @@ cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
 cnoremap <C-d> <Del>
 
+set autoindent 
 set autoread
-set background=dark
 set backup
 set backupdir=~/.vim/backup
 set clipboard=unnamed,autoselect
 set cmdheight=2
-set colorcolumn=80
+""set colorcolumn=80
 set cursorcolumn
 set cursorline
 set directory=~/.vim/backup
@@ -52,15 +53,20 @@ set mouse=a
 set nrformats+=alpha
 set nrformats-=octal
 set number
-set shiftwidth=4
+set shiftwidth=2
 set showcmd
 set showmatch
-set smartindent
 set statusline=%F%r%h
 set swapfile
-set tabstop=4
+set tabstop=2
 set virtualedit=block
 
+"filetype plugin indent on
+
+set background=dark
+"colorscheme molokai 
 "colorscheme hybrid
+"colorscheme solarized
+
 "set t_Co=256
 syntax on

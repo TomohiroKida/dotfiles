@@ -11,6 +11,8 @@ case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
 esac
 
+xrdb -merge .Xresources
+
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
@@ -25,6 +27,9 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
+alias ..='cd ..'
+
+
 export LANG=ja_JP.UTF-8
 
 # check the window size after each command and, if necessary,
@@ -34,11 +39,11 @@ shopt -s checkwinsize
 shopt -s histappend
 
 # for terminal cmdprompt
-PS1='\[\033[01;32m\]\u'
-PS1=$PS1'@\h\[\e[033;00m\]: '
-PS1=$PS1'\[\e[30;1m\](\[\e[033;0m\]\j\[\e[30;1m\])'
-PS1=$PS1'\[\033[00m\]:\[\033[01;34m\]\w'
-PS1=$PS1'\n\[\033[00m\]\$ '
+PS1='\[\e[00;33m\]\u' # user name
+PS1=$PS1'@\h\[\e[033;00m\]: ' # host name
+PS1=$PS1'\[\e[30;1m\](\[\e[033;0m\]\j\[\e[30;1m\])' # no of jobs
+PS1=$PS1'\[\033[00m\]:\[\033[00;32m\]\w' # pwd
+PS1=$PS1'\n\[\033[00m\]\$ ' # cmd
 export PS1
 
 # man page
@@ -77,12 +82,10 @@ fi
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc). 
-if ! shopt -oq posix; then
-    if [ -f /usr/share/bash-completion/bash_completion ]; then
-        . /usr/share/bash-completion/bash_completion
-    elif [ -f /etc/bash_completion ]; then
-        . /etc/bash_completion
-    fi
-fi 
+#if ! shopt -oq posix; then
+#    if [ -f ~/.local/etc/bash_completion ]; then
+#        . ~/.local/etc/bash_completion
+#    fi
+#fi 
 
 unset color_prompt force_color_prompt
