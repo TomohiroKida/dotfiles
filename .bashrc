@@ -39,10 +39,10 @@ shopt -s checkwinsize
 shopt -s histappend
 
 # for terminal cmdprompt
-PS1='\[\e[00;33m\]\u' # user name
+PS1='\[\e[01;32m\]\u' # user name
 PS1=$PS1'@\h\[\e[033;00m\]: ' # host name
 PS1=$PS1'\[\e[30;1m\](\[\e[033;0m\]\j\[\e[30;1m\])' # no of jobs
-PS1=$PS1'\[\033[00m\]:\[\033[00;32m\]\w' # pwd
+PS1=$PS1'\[\033[00m\]:\[\033[01;34m\]\w' # pwd
 PS1=$PS1'\n\[\033[00m\]\$ ' # cmd
 export PS1
 
@@ -77,15 +77,5 @@ fi
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
-
-
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc). 
-#if ! shopt -oq posix; then
-#    if [ -f ~/.local/etc/bash_completion ]; then
-#        . ~/.local/etc/bash_completion
-#    fi
-#fi 
 
 unset color_prompt force_color_prompt

@@ -24,6 +24,13 @@ let g:previm_open_cmd = 'firefox '
 nnoremap j gj
 nnoremap k gk
 
+" NORMALモードに戻るときにIMEをOFFにする
+" function! ImInActivate()
+"   call system('fcitx-remote -c')
+" endfunction
+" 
+" inoremap <silent> <> <ESC>:call ImInActivate()<CR>
+
 "" cmdline mode key bind like emacs
 cnoremap <C-b> <Left>
 cnoremap <C-f> <Right>
@@ -39,8 +46,8 @@ set backup
 set backupdir=~/.vim/backup
 set clipboard=unnamed,autoselect
 set cmdheight=2
-""set colorcolumn=80
-set cursorcolumn
+set colorcolumn=81
+"set cursorcolumn
 set cursorline
 set directory=~/.vim/backup
 set encoding=utf-8
@@ -64,9 +71,6 @@ set virtualedit=block
 "filetype plugin indent on
 
 set background=dark
-"colorscheme molokai 
-"colorscheme hybrid
-"colorscheme solarized
 
-"set t_Co=256
+set t_Co=256
 syntax on

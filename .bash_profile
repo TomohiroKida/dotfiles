@@ -9,4 +9,6 @@ PATH=$PATH:/sbin
 
 export PATH
 
+#xrdb -merge /home/users/kida/.Xdefaults
+
 source ~/.bashrc
