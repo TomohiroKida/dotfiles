@@ -11,7 +11,7 @@ case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
 esac
 
-xrdb -merge .Xresources
+#xrdb -merge .Xresources
 
 alias cp='cp -i'
 alias mv='mv -i'
@@ -21,13 +21,10 @@ alias ls='ls -F --color=auto'
 alias l='ls -CF'
 alias ll='ls -alF'
 alias la='ls -A'
-alias t='tmux -2'
 alias x=exit
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-
-alias ..='cd ..'
 
 
 export LANG=ja_JP.UTF-8

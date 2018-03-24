@@ -12,3 +12,5 @@ export PATH
 #xrdb -merge /home/users/kida/.Xdefaults
 
 source ~/.bashrc
+
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx

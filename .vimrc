@@ -1,3 +1,5 @@
+filetype off
+filetype plugin indent off
 "" ==== dein == ""
 if &compatible
     set nocompatible
@@ -14,7 +16,6 @@ call dein#add('tyru/open-browser.vim')
 call dein#add('tpope/vim-markdown')
 call dein#add('vhda/verilog_systemverilog.vim')
 
-filetype plugin indent on
 
 let g:quickrun_config = {'*': {'split': ''}}
 
@@ -24,7 +25,6 @@ let g:previm_open_cmd = 'firefox '
 nnoremap j gj
 nnoremap k gk
 
-" NORMALモードに戻るときにIMEをOFFにする
 " function! ImInActivate()
 "   call system('fcitx-remote -c')
 " endfunction
@@ -40,6 +40,7 @@ cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
 cnoremap <C-d> <Del>
 
+"set cursorcolumn
 set autoindent 
 set autoread
 set backup
@@ -47,7 +48,6 @@ set backupdir=~/.vim/backup
 set clipboard=unnamed,autoselect
 set cmdheight=2
 set colorcolumn=81
-"set cursorcolumn
 set cursorline
 set directory=~/.vim/backup
 set encoding=utf-8
@@ -60,17 +60,17 @@ set mouse=a
 set nrformats+=alpha
 set nrformats-=octal
 set number
-set shiftwidth=2
+set shiftwidth=4
 set showcmd
 set showmatch
 set statusline=%F%r%h
 set swapfile
-set tabstop=2
+set tabstop=4
 set virtualedit=block
-
-"filetype plugin indent on
 
 set background=dark
 
 set t_Co=256
 syntax on
+
+filetype plugin indent on
