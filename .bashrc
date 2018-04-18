@@ -36,10 +36,13 @@ shopt -s checkwinsize
 shopt -s histappend
 
 # for terminal cmdprompt
-PS1='\[\e[01;32m\]\u' # user name
-PS1=$PS1'@\h\[\e[033;00m\]: ' # host name
-PS1=$PS1'\[\e[30;1m\](\[\e[033;0m\]\j\[\e[30;1m\])' # no of jobs
-PS1=$PS1'\[\033[00m\]:\[\033[01;34m\]\w' # pwd
+# 0;30~37 black,red,green,yellow,blue,purple,skyblue,lgray
+# 1;30~37 dgray,lred,lgreen,lyellow,lblue,lpurple,lskyblue,white
+# 00 invalid
+PS1='\[\e[0;36m\]\u' # user name
+PS1=$PS1'@\h\[\e[0;35m\]:' # host name
+PS1=$PS1' \[\e[0;36m\](\[\e[1;33m\]\j\[\e[0;35m\]) ' # no of jobs
+PS1=$PS1'\[\033[36m\]:\[\033[0;35m\]\w' # pwd
 PS1=$PS1'\n\[\033[00m\]\$ ' # cmd
 export PS1
 
