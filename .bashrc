@@ -7,6 +7,9 @@ esac
 # for access right
 umask 022
 
+# 
+stty stop undef
+
 case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
 esac

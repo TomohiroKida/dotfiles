@@ -1,6 +1,32 @@
 defutf8 on
 defencoding utf8
 encoding utf8 utf8
+maptimeout 0
 
-#startup_message off
-#vbell off
+startup_message off
+vbell off
+
+defbce on
+term xterm
+
+defscrollback 10000
+
+escape ^qq
+
+setenv a ""
+setenv a "$a%{= cm}"
+setenv a "$a "
+setenv a "$a%-w"
+setenv a "$a%{= mc}"
+setenv a "$a%n"
+setenv a "$a "
+setenv a "$a%t"
+setenv a "$a%{-}"
+setenv a "$a%+w"
+setenv a "$a "
+setenv a "$a%-0<%="
+setenv a "$a%{= cm}"
+setenv a "$a%02c:%s"
+hardstatus alwayslastline "$a"
+
+shell bash
