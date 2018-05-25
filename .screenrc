@@ -6,7 +6,10 @@ maptimeout 0
 startup_message off
 vbell off
 
+attrcolor b ".I"
 defbce on
+termcapinfo xterm* 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+
 term xterm
 
 defscrollback 10000
