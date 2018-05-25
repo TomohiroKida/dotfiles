@@ -1,6 +1,8 @@
 filetype off
 filetype plugin indent off
-"" ==== dein == ""
+
+"" dein =======================================================================
+
 if &compatible
     set nocompatible
 endif
@@ -16,20 +18,15 @@ call dein#add('tyru/open-browser.vim')
 call dein#add('tpope/vim-markdown')
 call dein#add('vhda/verilog_systemverilog.vim')
 
-
 let g:quickrun_config = {'*': {'split': ''}}
 
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 let g:previm_open_cmd = 'firefox '
 
+"" ============================================================================
+
 nnoremap j gj
 nnoremap k gk
-
-" function! ImInActivate()
-"   call system('fcitx-remote -c')
-" endfunction
-" 
-" inoremap <silent> <> <ESC>:call ImInActivate()<CR>
 
 "" cmdline mode key bind like emacs
 cnoremap <C-b> <Left>
@@ -39,6 +36,7 @@ cnoremap <C-p> <Up>
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
 cnoremap <C-d> <Del>
+
 
 "set cursorcolumn
 set autoindent 

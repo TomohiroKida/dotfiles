@@ -11,7 +11,7 @@ term xterm
 
 defscrollback 10000
 
-escape ^qq
+escape ^Tt
 
 setenv a ""
 setenv a "$a%{= cm}"
