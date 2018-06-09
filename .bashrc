@@ -8,7 +8,7 @@ esac
 umask 022
 
 # 
-stty stop undef
+#stty stop undef
 
 case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
@@ -52,7 +52,7 @@ export PS1
 # man page
 manpath=(/opt/share/man \
          /usr/share/man \
-        ~/local/share/man)
+        $HOME/local/share/man)
 export MANPATH
 
 

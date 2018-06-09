@@ -2,14 +2,12 @@
 #export
 
 PATH=$PATH:/opt/bin
-PATH=$PATH:/usr/bin
-PATH=$PATH:/usr/sbin
-PATH=$PATH:/bin
-PATH=$PATH:/sbin
+#PATH=$PATH:/usr/bin
+#PATH=$PATH:/usr/sbin
+#PATH=$PATH:/bin
+#PATH=$PATH:/sbin
 
 export PATH
-
-#xrdb -merge /home/users/kida/.Xdefaults
 
 source ~/.bashrc
 

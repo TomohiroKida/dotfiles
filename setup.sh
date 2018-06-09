@@ -3,13 +3,14 @@
 # -i --interactive
 # -s --symbolic 
 
-ln -bis ~/dotfiles/.vimrc ~/.vimrc
-ln -bis ~/dotfiles/.bashrc ~/.bashrc
-ln -bis ~/dotfiles/.bash_profile ~/.bash_profile
-ln -bis ~/dotfiles/.tmux.conf ~/.tmux.conf
-ln -bis ~/dotfiles/.screenrc ~/.screenrc
-ln -bis ~/dotfiles/filetype.vim ~/.vim/filetype.vim
-ln -bis ~/dotfiles/ftplugin/ ~/.vim/ftplugin/
+ln -bis $HOME/dotfiles/.bash_profile $HOME
+ln -bis $HOME/dotfiles/.bashrc       $HOME
+ln -bis $HOME/dotfiles/.screenrc     $HOME
+ln -bis $HOME/dotfiles/.tmux.conf    $HOME
+ln -bis $HOME/dotfiles/.vimrc        $HOME
+ln -bis $HOME/dotfiles/plugins.vim   $HOME/.vim
+ln -bis $HOME/dotfiles/filetype.vim  $HOME/.vim
+ln -bis $HOME/dotfiles/ftplugin/     $HOME/.vim
 
 # -p --parents
 mkdir -p ~/.vim/backup
