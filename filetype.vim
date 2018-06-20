@@ -8,6 +8,6 @@ augroup filetypedetect
     au BufRead,BufNewFile *.rb    setfiletype ruby
     au BufRead,BufNewFile *.py    setfiletype python
     au BufRead,BufNewFile *.hs    setfiletype haskell
-    au BufRead,BufNewFile *.md    setfiletype md
+    au BufRead,BufNewFile *.md    setfiletype markdown
     au BufRead,BufNewFile *.vim   setfiletype vim
 augroup END
