@@ -59,7 +59,7 @@ set matchtime=1
 set virtualedit=block
 
 
-colorscheme hybrid
+colorscheme ron
 set background=dark
 set t_Co=256
 
