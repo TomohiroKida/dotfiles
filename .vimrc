@@ -28,6 +28,7 @@ set backup
 set backupdir=$HOME/.vim/backup
 set directory=$HOME/.vim/backup
 set encoding=utf-8
+set fileencoding=utf-8
 set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis
 set fileformats=unix,dos,mac
 set swapfile
@@ -58,7 +59,7 @@ set matchtime=1
 set virtualedit=block
 
 
-colorscheme ron
+colorscheme hybrid
 set background=dark
 set t_Co=256
 

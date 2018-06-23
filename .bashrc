@@ -42,10 +42,10 @@ shopt -s histappend
 # 0;30~37 black,red,green,yellow,blue,purple,skyblue,lgray
 # 1;30~37 dgray,lred,lgreen,lyellow,lblue,lpurple,lskyblue,white
 # 00 invalid
-PS1='\[\e[0;36m\]\u' # user name
-PS1=$PS1'@\h\[\e[0;37m\]:' # host name
+PS1='\[\e[1;36m\]\u' # user name
+PS1=$PS1'@\h\[\e[1;37m\]:' # host name
 PS1=$PS1'\[\e[0;37m\](\[\e[1;35m\]\j\[\e[0;37m\])' # no of jobs
-PS1=$PS1'\[\033[0;37m\]:\[\033[0;33m\]\w' # pwd
+PS1=$PS1'\[\033[1;37m\]:\[\033[1;33m\]\w' # pwd
 PS1=$PS1'\n\[\033[00m\]\$ ' # cmd
 export PS1
 
