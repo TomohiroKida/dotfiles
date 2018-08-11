@@ -59,7 +59,7 @@ set matchtime=1
 set virtualedit=block
 
 
-colorscheme ron
+colorscheme molokai
 set background=dark
 set t_Co=256
 
