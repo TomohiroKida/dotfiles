@@ -19,7 +19,6 @@ cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
 cnoremap <C-d> <Del>
 
-
 set autoindent 
 set expandtab
 set tabstop=4
