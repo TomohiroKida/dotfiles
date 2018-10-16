@@ -5,6 +5,7 @@
 
 ln -bis $HOME/dotfiles/.bash_profile $HOME
 ln -bis $HOME/dotfiles/.bashrc       $HOME
+ln -bis $HOME/dotfiles/.emacs        $HOME
 ln -bis $HOME/dotfiles/.screenrc     $HOME
 ln -bis $HOME/dotfiles/.tmux.conf    $HOME
 ln -bis $HOME/dotfiles/.vimrc        $HOME
