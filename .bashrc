@@ -28,7 +28,7 @@ alias x=exit
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-alias emacs='emacs -nw'
+#alias emacs='emacs -nw'
 
 
 export LANG=ja_JP.UTF-8

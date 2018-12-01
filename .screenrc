@@ -16,20 +16,25 @@ defscrollback 10000
 
 escape ^Tt
 
-setenv a ""
-setenv a "$a%{= cm}"
+# option: underline(u) bold(b) reverse(r) dim(dim) emphasis(s) bright(B)
+# color:  black(k) red(r) green(g) yellow(y) b(blue) m(magenta)
+#         c(cyan) w(white) d(default) .(not change)
+setenv BaseColor   "%{= cm}"
+setenv ActColor    "%{= mc}"
+setenv NonActColor "%{= cm}"
+setenv a "$a$BaseColor" 
 setenv a "$a "
-setenv a "$a%-w"
-setenv a "$a%{= mc}"
-setenv a "$a%n"
+setenv a "$a%-w"            # active windows 's num and title
+setenv a "$a$ActColor" 
+setenv a "$a%n"             # window num
+setenv a "$a " 
+setenv a "$a%t"             # window title
+setenv a "$a$NonActColor"
+setenv a "$a%+w"            # non-active windows 's num and title
 setenv a "$a "
-setenv a "$a%t"
-setenv a "$a%{-}"
-setenv a "$a%+w"
-setenv a "$a "
-setenv a "$a%-0<%="
-setenv a "$a%{= cm}"
-setenv a "$a%02c:%s"
+setenv a "$a$BaseColor" 
+setenv a "$a%-0<%="         # set from right 0
+setenv a "$a%02c:%s"        # HH:MM 24 hours and sec
 hardstatus alwayslastline "$a"
 
 shell bash
