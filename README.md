@@ -1,10 +1,22 @@
 # my dotfiles
 - .bash_profile
 - .bashrc
-- .tmux.conf
+- .emacs
 - .screenrc
+- .tmux.conf
 - .vimrc
-- plugins.vim
-- filetype.vim
 - ftplugin
-  - tex, ruby, css, javascript, c, haskell, markdown, scala, html
+  - c
+  - cpp
+  - css
+  - html
+  - indent_2.tex
+  - indent_4.tex
+  - indent_8.tex
+  - javascript
+  - markdown
+  - platex
+  - ruby
+  - scala
+  - tex
+- plugins.vim

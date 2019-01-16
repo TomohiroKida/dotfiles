@@ -46,18 +46,20 @@ cnoremap <C-e> <End>
 cnoremap <C-d> <Del>
 
 set autoindent 
-set expandtab
-set tabstop=4
-set shiftwidth=4
+set backspace=2
 set backup
 set backupdir=$HOME/.vim/backup
 set directory=$HOME/.vim/backup
 set encoding=utf-8
+set expandtab
 set fileencoding=utf-8
-set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis
+set fileencodings=iso-2022-jp,euc-jp,utf-8,sjis
 set fileformats=unix,dos,mac
-set swapfile
 set iskeyword-=_
+set shiftwidth=0
+set softtabstop=-1
+set swapfile
+set tabstop=4
 
 set autoread
 
