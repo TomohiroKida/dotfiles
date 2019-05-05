@@ -1,3 +1,4 @@
+multiuser on
 defutf8 on
 defencoding utf8
 encoding utf8 utf8
@@ -16,8 +17,7 @@ defscrollback 10000
 
 escape ^Tt
 
-# option: underline(u) bold(b) reverse(r) dim(dim) emphasis(s) bright(B)
-# color:  black(k) red(r) green(g) yellow(y) b(blue) m(magenta)
+# option: underline(u) bold(b) reverse(r) dim(dim) emphasis(s) bright(B) # color:  black(k) red(r) green(g) yellow(y) b(blue) m(magenta)
 #         c(cyan) w(white) d(default) .(not change)
 setenv BaseColor   "%{= cm}"
 setenv ActColor    "%{= mc}"
@@ -37,4 +37,4 @@ setenv a "$a%-0<%="         # set from right 0
 setenv a "$a%02c:%s"        # HH:MM 24 hours and sec
 hardstatus alwayslastline "$a"
 
-shell bash
+shell ${SHELL}

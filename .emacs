@@ -1,13 +1,9 @@
 (package-initialize)
 
-;; load el files
-(setq load-path
-      (append '(
-		"~/.emacs.d/load_els"
-		) load-path))
-(load "packages.el")
-(load "local.el")
-(load "encode.el")
+;;
+;; Load My el Files
+;;
+(setq load-path (cons "~/.emacs.d/load_els" load-path))
 
 ;; color theme
 (load-theme 'manoj-dark t)
@@ -40,4 +36,3 @@
 ;; change Punctuation mark"," "."
 (setq its-hira-period ".")
 (setq its-hira-comma ",")
-

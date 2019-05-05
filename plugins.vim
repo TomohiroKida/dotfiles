@@ -15,7 +15,7 @@ call dein#add('thinca/vim-quickrun')
 call dein#add('kannokanno/previm')
 call dein#add('tyru/open-browser.vim')
 call dein#add('tpope/vim-markdown')
-call dein#add('vhda/verilog_systemverilog.vim')
+call dein#add('Yggdroot/indentLine')
 call dein#end()
 
 let g:quickrun_config = {'*': {'split': ''}}
