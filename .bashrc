@@ -1,7 +1,6 @@
 # If not running interactively, don't do anything
 case $- in
-    *i*) ;;
-    *) return;;
+    *i*) ;; *) return;;
 esac
 
 # for access right
@@ -65,13 +64,11 @@ HISTSIZE=200
 HISTFILESIZE=2000
 HISTCONTROL=ignoreboth
 
-
 # enviroment variables
 export XMODIFIERS="@im=ibus"
 export GTK_IM_MODULE="ibus"
 export QT_IM_MODULE="ibus"
 export JSERVER="localhost"
-
 
 # load files path etc...
 if [ -f  ~/.bash_local ]; then

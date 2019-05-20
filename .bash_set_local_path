@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# For sourcing bash local file if you change PATH and LD_LIBRARY_PATH, etc.
+# source .bash_set_local_path
+#! WARNING ! 
+#! you must define variable of "def_path" and "def_library_path" to 
+#! .bash_profiile
+
+if [ -n "$def_path" ]; then
+    export PATH=$def_path
+fi
+export LD_LIBRARY_PATH=$def_ld_library_path
+if [ -f $HOME/.bash_local ]; then
+    source .bash_local
+fi

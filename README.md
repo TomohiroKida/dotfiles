@@ -1,6 +1,7 @@
 # my dotfiles
 - .bash_profile
 - .bashrc
+- .bash_set_local_path
 - .emacs
 - .screenrc
 - .tmux.conf
