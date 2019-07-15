@@ -13,12 +13,17 @@ case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
 esac
 
+export LANG=ja_JP.UTF-8
+
+# dont use Ctrl-D for exit
+export IGNOREEOF=100
+
 #xrdb -merge .Xresources
 
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
-alias h='history'
+alias h='history' 
 alias ls='ls -F --color=auto'
 alias l='ls -CF'
 alias ll='ls -alF'
@@ -29,8 +34,6 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 #alias emacs='emacs -nw'
 
-
-export LANG=ja_JP.UTF-8
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -44,7 +47,7 @@ shopt -s histappend
 # 00 invalid
 PS1='\[\e[1;36m\]\u'                               # user name
 PS1=$PS1'@\h\[\e[1;37m\]:'                         # host name
-PS1=$PS1'\[\e[0;37m\](\[\e[1;35m\]\j\[\e[0;37m\])' # num of jobs
+PS1=$PS1'\[\e[0;37m\]\[(\e[1;35m\]\j\[\e[0;37m\])' # num of jobs
 PS1=$PS1'\[\033[1;37m\]:\[\033[1;33m\]\w'          # pwd
 PS1=$PS1'\n\[\033[00m\]\$ '                        # cmd
 export PS1
@@ -69,6 +72,16 @@ export XMODIFIERS="@im=ibus"
 export GTK_IM_MODULE="ibus"
 export QT_IM_MODULE="ibus"
 export JSERVER="localhost"
+
+
+# For sourcing bash local file if you change PATH and LD_LIBRARY_PATH, etc.
+# Prevent your PATH and LD_LIBRARY from increasing path by "source .bashrc"
+#! WARNING ! 
+#! MUST define variable of "$def_path" and "$def_library_path" to .bash_profiile
+if [ -n "$def_path" ]; then
+    export PATH=$def_path
+fi
+export LD_LIBRARY_PATH=$def_ld_library_path
 
 # load files path etc...
 if [ -f  ~/.bash_local ]; then
