@@ -10,4 +10,3 @@ export def_ld_library_path=$LD_LIBRARY_PATH
 source ~/.bashrc
 
 #[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
-
