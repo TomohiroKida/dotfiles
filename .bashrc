@@ -4,21 +4,13 @@ case $- in
 esac
 
 # for access right
+# dir 777 - 022 = 755
+# fil 666 - 022 = 644
 umask 022
-
-# 
-#stty stop undef
 
 case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
 esac
-
-export LANG=ja_JP.UTF-8
-
-# dont use Ctrl-D for exit
-export IGNOREEOF=100
-
-#xrdb -merge .Xresources
 
 alias cp='cp -i'
 alias mv='mv -i'
@@ -33,7 +25,6 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 #alias emacs='emacs -nw'
-
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -58,7 +49,6 @@ manpath=(/opt/share/man \
         $HOME/local/share/man)
 export MANPATH
 
-
 # See bash(1) for more option
 # Supplement Large and Small Spells
 MAILCHECK=0
@@ -68,28 +58,28 @@ HISTFILESIZE=2000
 HISTCONTROL=ignoreboth
 
 # enviroment variables
+export LANG=ja_JP.UTF-8
 export XMODIFIERS="@im=ibus"
 export GTK_IM_MODULE="ibus"
 export QT_IM_MODULE="ibus"
 export JSERVER="localhost"
+# dont use Ctrl-D for exit
+export IGNOREEOF=100
 
-
+# LOAD LOCAL FILE () {
 # For sourcing bash local file if you change PATH and LD_LIBRARY_PATH, etc.
-# Prevent your PATH and LD_LIBRARY from increasing path by "source .bashrc"
-#! WARNING ! 
+# Prevent your PATH and LD_LIBRARY from increasing path by "source .bashrc" #! WARNING ! 
 #! MUST define variable of "$def_path" and "$def_library_path" to .bash_profiile
 if [ -n "$def_path" ]; then
     export PATH=$def_path
 fi
 export LD_LIBRARY_PATH=$def_ld_library_path
-
-# load files path etc...
 if [ -f  ~/.bash_local ]; then
     . ~/.bash_local
 fi
-# local aliases
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
+# }
 
 unset color_prompt force_color_prompt
