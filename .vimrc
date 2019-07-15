@@ -87,9 +87,9 @@ set matchtime=1
 
 set virtualedit=block
 
-"colorscheme ron
+colorscheme ron
 set background=dark
-"set t_Co=256
+set t_Co=256
 
 " english character is checked spell
 " chinese, japanese, and other east asian characters are not marked as errors.
