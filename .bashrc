@@ -24,6 +24,7 @@ alias x=exit
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
+alias fuck='eval "$(thefuck $(fc -ln -1))"; history -r'
 #alias emacs='emacs -nw'
 
 # check the window size after each command and, if necessary,

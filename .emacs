@@ -28,6 +28,9 @@
 (setq mew-mail-path "~/.Mail")
 (setq mew-signature-insert-last t)
 
+;; non bell all of alert sounds
+(setq ring-bell-function 'ignore)
+
 ;; backup file
 (setq backup-directory-alist
       (cons (cons "\\.*$" (expand-file-name "~/.emacs.d/backup/"))
