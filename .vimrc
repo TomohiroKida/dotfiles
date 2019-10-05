@@ -1,18 +1,13 @@
 filetype off
 filetype plugin indent off
 
-" =============== dein ===============
-
+" souce dein plugins
 source ~/.vim/plugins.vim
 
-nnoremap j gj
-nnoremap k gk
-
-"== tabline
+" set tabline 
 function! s:SID_PREFIX()
     return matchstr(expand('<sfile>'), '<SNR>\d\+_\zeSID_PREFIX$')
 endfunction
-
 function! s:my_tabline()  "{{{
     let s = ''
     for i in range(1, tabpagenr('$'))
@@ -34,9 +29,7 @@ endfunction "}}}
 let &tabline = '%!'. s:SID_PREFIX() . 'my_tabline()'
 set showtabline=2
 
-" =============== cmdline mode key bind ===============
-" ---- like emacs ----
-
+" cmdline mode key bind like emacs
 cnoremap <C-b> <Left>
 cnoremap <C-f> <Right>
 cnoremap <C-n> <Down>
@@ -44,6 +37,10 @@ cnoremap <C-p> <Up>
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
 cnoremap <C-d> <Del>
+
+nnoremap j gj
+nnoremap k gk
+
 
 set autoindent 
 set ambiwidth=double
@@ -67,8 +64,7 @@ set autoread
 set clipboard=unnamed,autoselect
 set mouse=a
 
-
-"set cursorcolumn
+" For position
 set colorcolumn=81
 set cursorline
 set hlsearch
@@ -87,12 +83,14 @@ set matchtime=1
 
 set virtualedit=block
 
+" For vim color design
 colorscheme ron
 set background=dark
-set t_Co=256
+"set t_Co=256
 
-" english character is checked spell
-" chinese, japanese, and other east asian characters are not marked as errors.
+" For spell command
+" English character is checked spell.
+" Chinese, japanese, and other east asian characters are not marked as errors.
 set spelllang=en,cjk
 
 syntax on
