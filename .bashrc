@@ -15,16 +15,15 @@ esac
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
 alias h='history' 
 alias ls='ls -F --color=auto'
 alias l='ls -CF'
-alias ll='ls -alF'
 alias la='ls -A'
+alias ll='ls -alF'
 alias x=exit
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
-#alias emacs='emacs -nw'
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -68,7 +67,8 @@ export IGNOREEOF=100
 
 # LOAD LOCAL FILE () {
 # For sourcing bash local file if you change PATH and LD_LIBRARY_PATH, etc.
-# Prevent your PATH and LD_LIBRARY from increasing path by "source .bashrc" #! WARNING ! 
+# Prevent your PATH and LD_LIBRARY from increasing path by "source .bashrc" 
+#! WARNING ! 
 #! MUST define variable of "$def_path" and "$def_library_path" to .bash_profiile
 if [ -n "$def_path" ]; then
     export PATH=$def_path

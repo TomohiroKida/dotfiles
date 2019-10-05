@@ -1,40 +1,53 @@
+# Disable start message and vbell
 startup_message off
-
-defutf8 on
-defencoding utf8
-encoding utf8 utf8
-
 vbell off
 vbell_msg "Bell"
+
+# Enable Default encoding UTF-8 same as '-u'
+defutf8 on
+# Define inout encoding
+defencoding utf8
+
+# Use blight color for bold text
+attrcolor b ".I"    
+# Background-color-erase
+defbce on           
+# Change Default size of scroll buffer
+defscrollback 32000
+# Set prefix command
+escape ^Tt
+# For 256 color
+termcapinfo xterm* 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm' 
+
 maptimeout 0
 
-attrcolor b ".I"    # use blight color for bold text
-defbce on           # background-color-erase
-defscrollback 10000
-escape ^Tt
-multiuser on
-shell ${SHELL}
-shelltitle "% |bash"
-termcapinfo xterm* 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm' # for 256 color
+#bind s split
 
-# option: underline(u) bold(b) reverse(r) dim(dim) emphasis(s) bright(B) 
-# color:  black(k) red(r) green(g) yellow(y) b(blue) m(magenta)
+# Option: underline(u) bold(b) reverse(r) dim(dim) emphasis(s) bright(B) 
+# Color:  black(k) red(r) green(g) yellow(y) b(blue) m(magenta)
 #         c(cyan) w(white) d(default) .(not change)
-setenv BaseColor   "%{.cm}"
-setenv ActColor    "%{.mc}"
-setenv NonActColor "%{.cm}"
-setenv a "$a$BaseColor" 
-setenv a "$a %-w"           # active windows 's num and title
-setenv a "$a$ActColor" 
-setenv a "$a%n"             # window num
-setenv a "$a %t"            # window title
-setenv a "$a$NonActColor"
-setenv a "$a%+w "           # non-active windows 's num and title
-setenv a "$a$BaseColor" 
-setenv a "$a%-0<%="         # set from right 0
-setenv a "$a%Y %m/%d "
-setenv a "$a%02c:%s"        # HH:MM 24 hours and sec
-hardstatus alwayslastline "$a"
+# Attribute: + Add specified sets
+#            - Sub specified sets
+#            ! Reverse specified sets
+#            = Change specified sets
+#            %{[Specify Attribute] [Back Color][Front Color]}
+#
+# Set hardware status
+#setenv BaseColor   "%{.cm}"
+#setenv ActColor    "%{.mc}"
+#setenv NonActColor "%{.cm}"
+#setenv HS "$HS$BaseColor" 
+#setenv HS "$HS %-w"           # active windows 's num and title
+#setenv HS "$HS$ActColor" 
+#setenv HS "$HS%n"             # window num
+#setenv HS "$HS %t"            # window title
+#setenv HS "$HS$NonActColor"
+#setenv HS "$HS%+w "           # non-active windows 's num and title
+#setenv HS "$HS$BaseColor" 
+#setenv HS "$HS%-0<%="         # set from right 0
+#setenv HS "$HS%Y %m/%d "
+#setenv HS "$HS%02c:%s"        # HH:MM 24 hours and sec
+setenv HS "%-Lw%{= BW}%50>%n%f* %t%{-}%+Lw%<"
+hardstatus alwayslastline "$HS"
 hardstatus off
 
-bind s split

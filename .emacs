@@ -34,7 +34,7 @@
 	    backup-directory-alist))
 ;; auto-save file
 (setq auto-save-file-name-transforms
-      `((".*" ,(expand-file-name "~/.emacs.d/backup/") t)))
+	  `((".*" ,(expand-file-name "~/.emacs.d/backup/") t)))
 
 ;; use mouse wheel to scroll
 (mouse-wheel-mode)
@@ -47,5 +47,9 @@
 (setq its-hira-period ".")
 (setq its-hira-comma ",")
 
+(setq-default indent-tabs-mode t)
 (setq default-tab-width 4)
 (setq js-indent-level 2)
+
+;; C-h for backspace
+(global-set-key "\C-h" 'delete-backward-char)
