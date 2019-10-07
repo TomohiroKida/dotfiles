@@ -8,6 +8,8 @@ defutf8 on
 # Define inout encoding
 defencoding utf8
 
+term xterm-256color
+
 # Use blight color for bold text
 attrcolor b ".I"    
 # Background-color-erase
