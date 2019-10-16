@@ -23,6 +23,7 @@ alias ls='ls -F --color=auto'
 alias l='ls -CF'
 alias la='ls -A'
 alias ll='ls -alF'
+alias sl='ls'
 alias x=exit
 alias fuck='eval "$(thefuck $(fc -ln -1))"; history -r'
 
