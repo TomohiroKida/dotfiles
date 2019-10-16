@@ -66,6 +66,7 @@ export JSERVER="localhost"
 # dont use Ctrl-D for exit
 export IGNOREEOF=100
 
+
 # LOAD LOCAL FILE () {
 # For sourcing bash local file if you change PATH and LD_LIBRARY_PATH, etc.
 # Prevent your PATH and LD_LIBRARY from increasing path by "source .bashrc" 
@@ -83,4 +84,3 @@ if [ -f ~/.bash_aliases ]; then
 fi
 # }
 
-unset color_prompt force_color_prompt
