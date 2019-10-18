@@ -85,3 +85,4 @@ if [ -f ~/.bash_aliases ]; then
 fi
 # }
 
+unset color prompt force color prompt
