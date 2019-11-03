@@ -25,31 +25,19 @@ maptimeout 0
 
 #bind s split
 
-# Option: underline(u) bold(b) reverse(r) dim(dim) emphasis(s) bright(B) 
-# Color:  black(k) red(r) green(g) yellow(y) b(blue) m(magenta)
-#         c(cyan) w(white) d(default) .(not change)
+########## Set hardware status ########## 
 # Attribute: + Add specified sets
 #            - Sub specified sets
 #            ! Reverse specified sets
 #            = Change specified sets
 #            %{[Specify Attribute] [Back Color][Front Color]}
 #
-# Set hardware status
-#setenv BaseColor   "%{.cm}"
-#setenv ActColor    "%{.mc}"
-#setenv NonActColor "%{.cm}"
-#setenv HS "$HS$BaseColor" 
-#setenv HS "$HS %-w"           # active windows 's num and title
-#setenv HS "$HS$ActColor" 
-#setenv HS "$HS%n"             # window num
-#setenv HS "$HS %t"            # window title
-#setenv HS "$HS$NonActColor"
-#setenv HS "$HS%+w "           # non-active windows 's num and title
-#setenv HS "$HS$BaseColor" 
-#setenv HS "$HS%-0<%="         # set from right 0
-#setenv HS "$HS%Y %m/%d "
-#setenv HS "$HS%02c:%s"        # HH:MM 24 hours and sec
-setenv HS "%-Lw%{= BW}%50>%n%f* %t%{-}%+Lw%<"
+setenv HS "$HS %-w"           # active windows 's num and title
+setenv HS "$HS%n"             # window num
+setenv HS "$HS %t"            # window title
+setenv HS "$HS%+w "           # non-active windows 's num and title
+setenv HS "$HS%-0<%="         # set from right 0
+setenv HS "$HS%Y-%m-%d-%D "
+setenv HS "$HS%02c"        # HH:MM 24 hours
 hardstatus alwayslastline "$HS"
 hardstatus off
-
