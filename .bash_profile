@@ -1,5 +1,5 @@
 #LANG=ja_JP.UTF-8
-=$PATH:/opt/bin
+export PATH=$PATH:/opt/bin
 
 # For .bash_set_local_path
 # Save your $PATH and $LD_LIBRARY_PATH before soucing .bashrc and .bash_local
