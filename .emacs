@@ -3,7 +3,7 @@
 ;;
 ;; Load My el Files
 ;;
-(setq load-path (cons "~/.emacs.d/load_els" load-path))
+;(setq load-path (cons "~/.emacs.d/init.el" load-path))
 
 ;; don't show startup message
 (setq inhibit-startup-message t)
@@ -14,8 +14,9 @@
 (load-theme 'manoj-dark t)
 
 ;; anthy on emacs
-(setq default-input-method "japanese-egg-anthy")
-(global-set-key "\C-o" 'toggle-input-method)
+;(setq default-input-method "japanese-egg-anthy")
+;(setq default-input-method "japanese-mozc")
+;(global-set-key "\C-o" 'toggle-input-method)
 
 ;; compile scroll
 (setq compilation-scroll-output t)
