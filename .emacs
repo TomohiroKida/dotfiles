@@ -23,7 +23,7 @@
 (setq compilation-scroll-output t)
 ;; show line number
 (global-linum-mode t)
-(setq linum-format "%4d ")
+(setq linum-format "%3d ")
 ;; non bell all of alert sounds
 (setq ring-bell-function 'ignore)
 ;; backup file
@@ -38,8 +38,8 @@
 ;; use clipboard 
 (cond (window-system
        (setq x-select-enable-clipboard t)))
-(setq its-hira-period ".")
-(setq its-hira-comma ",")
+(setq its-hira-period "．")
+(setq its-hira-comma "，")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Indent ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; valid tab indent
@@ -55,3 +55,23 @@
 (show-paren-mode 1)
 ;; open file via symlink
 (setq vc-follow-symlinks t)
+
+(if (boundp 'window-system)
+	(setq default-frame-alist
+		  (append (list
+				   '(width . 87)
+				   '(height . 55)
+				   )
+				  default-frame-alist)
+		  )
+  )
+(setq initial-frame-alist default-frame-alist)
+
+(add-to-list 'load-path "~/.emacs.d/popup-el")
+(load "popup")
+(add-to-list 'load-path "~/.emacs.d/auto-complete")
+(load "auto-complete")
+(require 'auto-complete-config)
+(ac-config-default)
+(ac-set-trigger-key "TAB")
+(setq ac-use-menu-map t)
