@@ -1,4 +1,3 @@
-(package-initialize)
 
 ;; load my emacs lisp file
 (setq load-path (cons "~/.emacs.d/my_els" load-path))
@@ -56,34 +55,22 @@
 ;; open file via symlink
 (setq vc-follow-symlinks t)
 
-(if (boundp 'window-system)
-	(setq default-frame-alist
-		  (append (list
-				   '(width . 87)
-				   '(height . 55)
-				   )
-				  default-frame-alist)
-		  )
-  )
-(setq initial-frame-alist default-frame-alist)
+;(if (boundp 'window-system)
+;	(setq default-frame-alist
+;		  (append (list
+;				   '(width . 87)
+;				   '(height . 55)
+;				   )
+;				  default-frame-alist)
+;		  )
+;  )
+;(setq initial-frame-alist default-frame-alist)
 
-(add-to-list 'load-path "~/.emacs.d/popup-el")
-(load "popup")
-(add-to-list 'load-path "~/.emacs.d/auto-complete")
-(load "auto-complete")
-(require 'auto-complete-config)
-(ac-config-default)
-(ac-set-trigger-key "TAB")
-(setq ac-use-menu-map t)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (scala-mode php-mode))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+;(add-to-list 'load-path "~/.emacs.d/popup-el")
+;(load "popup")
+;(add-to-list 'load-path "~/.emacs.d/auto-complete")
+;(load "auto-complete")
+;(require 'auto-complete-config)
+;(ac-config-default)
+;(ac-set-trigger-key "TAB")
+;(setq ac-use-menu-map t)
