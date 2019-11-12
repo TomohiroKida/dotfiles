@@ -1,22 +1,16 @@
-# useage
+# dotfiles
+Setting commandline environments on linux
+It makes symbolic link from skel(skeleton) directory.
+If target file exists, then making a backup of existed by mv command
+and making symlink from dotfiles.
+
+# usage
 $ cd dotfiles
 $ ./setup.sh
 
-# my dotfiles
-- .bash_profile
-- .bashrc
-- .emacs
-- .screenrc
-- .tmux.conf
-- .vimrc
-- ftplugin
-  c ,cpp ,css ,html ,indent_2.tex ,indent_4.tex ,indent_8.tex ,javascript ,markdown ,platex ,ruby ,scala ,tex
-- plugins.vim
+# main option
+- usage [-h|--help|--usage]
+- force [-f|--force]
+- update
 
-# create directory
-- ~/.vim/after
-- ~/.vim/backup
-
-# create lnk file
-- ~/.vim/after/ftplugin
-- ~/.vim/plugins.vim
+# dependencies
