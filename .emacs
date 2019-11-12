@@ -1,15 +1,56 @@
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; package.el ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(require 'package)
+(add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/") t)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(add-to-list 'package-archives '("org" . "https://orgmode.org/elpa/") t)
 (package-initialize)
 
-;; load my emacs lisp file
-(setq load-path (cons "~/.emacs.d/my_els" load-path))
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+(eval-when-compile
+  (require 'use-package)
+  (setq use-package-always-ensure t))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; local config ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; anthy on emacs
-(setq default-input-method "japanese-egg-anthy")
+
+;; auto complete
+(use-package auto-complete
+  :config
+  (require 'auto-complete-config))
+(with-eval-after-load 'auto-complete-config
+  (ac-config-default)
+  (global-auto-complete-mode t)
+  (ac-set-trigger-key "TAB")
+  (setq ac-use-menu-map t))
+
+; anthy
+;(when (locate-library "egg")
+;  (setq default-input-method "japanese-egg-anthy"))
+; mozc
+(when (locate-library "mozc")
+  (require 'mozc)
+  (setq default-input-method "japanese-mozc"))
+; IME key 
 (global-set-key "\C-o" 'toggle-input-method)
-;; mew 
+; mew 
 (setq mew-mail-path "~/.Mail")
 (setq mew-signature-insert-last t)
+
+;; encoding
+;; change locale UTF-8
+(set-locale-environment nil)
+(set-language-environment "Japanese")
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(set-buffer-file-coding-system 'utf-8)
+(setq default-buffer-file-coding-system 'utf-8)
+(set-default-coding-systems 'utf-8)
+(prefer-coding-system 'utf-8)
+(set-default 'buffer-file-coding-system 'utf-8-with-signature)
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; local config ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; don't show startup message
@@ -66,21 +107,14 @@
 		  )
   )
 (setq initial-frame-alist default-frame-alist)
-
-(add-to-list 'load-path "~/.emacs.d/popup-el")
-(load "popup")
-(add-to-list 'load-path "~/.emacs.d/auto-complete")
-(load "auto-complete")
-(require 'auto-complete-config)
-(ac-config-default)
-(ac-set-trigger-key "TAB")
-(setq ac-use-menu-map t)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (scala-mode php-mode))))
+ '(mozc-candidates-style "popup" t)
+ '(package-selected-packages (quote (mozc use-package auto-complete)))
+ '(setq "japanese" t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
