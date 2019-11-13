@@ -1,0 +1,16 @@
+# -*- mode: gitignore; -*-
+*~
+\#*\#
+auto-save-list
+# elpa packges
+/elpa/
+
+/backups/
+ac-comphist.dat
+
+/lisp/env.el
+
+
+viper
+
+/*.log
