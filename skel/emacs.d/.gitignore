@@ -8,8 +8,8 @@ auto-save-list
 /backups/
 ac-comphist.dat
 
+custom.el
 /lisp/env.el
-
 
 viper
 

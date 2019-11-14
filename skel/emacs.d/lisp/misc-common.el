@@ -10,26 +10,30 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; input method ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (global-set-key "\C-o" 'toggle-input-method)
-;;; mozc
-(when (locate-library "mozc")
-  (setq default-input-method "japanese-mozc"))
-;;; egg
-(when (locate-library "egg")
-  (setq default-input-method "japanese-egg-anthy"))
 ;;; ddskk
 (setq default-input-method 'japanese-skk
 	  skk-japanese-message-and-error nil
 	  skk-show-japanese-menu nil
 	  skk-show-annotation nil
 	  skk-status-indicator 'left)
-;; indicator
+; indicator
 (setq skk-latin-mode-string "[_A]"
 	  skk-hiragana-mode-string "[あ]"
 	  skk-katakana-mode-string "[ア]"
 	  skk-jisx0208-latin-mode-string "[A]"
 	  skk-jisx0201-mode-string "[_ｱ]"
 	  skk-indicator-use-cursor-color nil
-	  skk-show-inline 'vertical)
+	  skk-show-inline 'vertical
+	  skk-kuten-touten-alist '(
+							   (jp . ("．" . "，"))
+							   (en . ("." . ","))
+							   ))
+;;; mozc
+(when (locate-library "mozc")
+  (setq default-input-method "japanese-mozc"))
+;;; egg
+(when (locate-library "egg")
+  (setq default-input-method "japanese-egg-anthy"))
 
 ;; create bacup file in .emacs.d/backups
 (setq-default delete-old-versions t)

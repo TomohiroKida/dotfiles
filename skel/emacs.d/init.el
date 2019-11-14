@@ -15,16 +15,9 @@
 ;; global non-major and/or minor-modes
 (require 'misc-common)
 
+
 (setq gc-cons-threshold (/ gc-cons-threshold 10))
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (quickrun mozc ddskk auto-complete))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+
+;; emacs version 22.3 or later
+(setq custom-file "~/.emacs.d/custom.el")
+(load custom-file)

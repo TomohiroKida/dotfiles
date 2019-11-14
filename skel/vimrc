@@ -41,7 +41,6 @@ cnoremap <C-d> <Del>
 nnoremap j gj
 nnoremap k gk
 
-
 set autoindent 
 set ambiwidth=double
 set backspace=2
@@ -71,10 +70,12 @@ set hlsearch
 set number
 
 set laststatus=2
-set statusline=%F%r%h
+set statusline= " %F%r%h
 set showcmd
 set cmdheight=2
 
+set ruler
+set rulerformat=%20(%l\ %c%V%)
 set nrformats+=alpha
 set nrformats-=octal
 
