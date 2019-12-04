@@ -1,5 +1,4 @@
 ;; -*- coding:utf-8 -*-
-
 (provide 'misc-common)
 
 ;;; auto-complete

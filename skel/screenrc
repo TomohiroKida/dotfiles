@@ -1,3 +1,6 @@
+# Prefix
+escape ^Tt
+
 # Disable start message and vbell
 startup_message off
 vbell off
@@ -14,10 +17,8 @@ term xterm-256color
 attrcolor b ".I"    
 # Background-color-erase
 defbce on           
-# Change Default size of scroll buffer
-defscrollback 32000
-# Set prefix command
-escape ^Tt
+# Change Default size of scroll buffer 
+defscrollback 32000 
 # For 256 color
 termcapinfo xterm* 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm' 
 
