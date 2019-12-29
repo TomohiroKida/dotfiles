@@ -1,0 +1,1 @@
+/home/kida/work/dotfiles/skel/emacs.d
