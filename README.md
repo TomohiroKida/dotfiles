@@ -6,11 +6,10 @@ and making symlink from dotfiles.
 
 # usage
 $ cd dotfiles
-$ ./setup.sh
+$ ./setup.sh [nP]
 
 # main option
-- usage [-h|--help|--usage]
-- force [-f|--force]
-- update
+- dry run [n]
+- execute [P]
 
-# dependencies
+# 

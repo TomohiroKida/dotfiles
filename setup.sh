@@ -1,41 +1,38 @@
 #!/bin/bash
 
-if [[ "$1" != "n" && "$1" != "P" ]] ; then
+#--- options ---# 
+OPT="$1"
+if [[ "$OPT" != "n" && "$OPT" != "P" ]] ; then
 	echo "$0 [nP]"
 	exit 1
 fi
+DRY-RUN() {
+    #shift
+    if [ "$OPT" = "P" ]; then
+        "$@"
+    else
+        echo "$@"
+    fi
+}
 
-### vim
-mkdir -p ~/.vim/dein/repos/github.com/Shougo/dein.vim
-#git clone https://github.com/Shougo/dein.vim.git \
-#    ~/.vim/dein/repos/github.com/Shougo/dein.vim
-mkdir -p ~/.vim/backup
-mkdir -p ~/.vim/after
-if [ "$1" = "P" ]; then
-    ln -sf $(pwd)/plugins.vim ~/.vim/
-    ln -sf $(pwd)/ftplugin/ ~/.vim/after/ftplugin
-else 
-    echo "ln -sf $(pwd)/plugins.vim ~/.vim/"
-    echo "ln -sf $(pwd)/ftplugin/ ~/.vim/after/ftplugin"
-fi
+#--- vim ---#
+DRY-RUN mkdir -p ~/.vim/dein/repos/github.com/Shougo/dein.vim
+DRY-RUN git clone https://github.com/Shougo/dein.vim.git \
+        ~/.vim/dein/repos/github.com/Shougo/dein.vim
+DRY-RUN mkdir -p ~/.vim/backup
+DRY-RUN mkdir -p ~/.vim/after
+DRY-RUN ln -sf $(pwd)/plugins.vim ~/.vim/
+DRY-RUN ln -sf $(pwd)/ftplugin/ ~/.vim/after/ftplugin
 
-### skel
+#--- skel ---#
 for fp in $(pwd)/skel/* ; do
 	fn="$(basename $fp)"
 	from="${fp}"
 	to="~/.${fn}"
-	if [ -e ${to} ] ; then
-		if [ "$1" = "P" ]; then
-			diff ${from} ${to} ||
-			cp -L ${to} ${to}.$(date +%F_%T).old
-		else
-			diff ${from} ${to} ||
-			echo "cp -L ${to} ${to}.$(date +%F_%T).old"
-		fi
+    # backup check
+	if [ -e "${to}" ] ; then
+		DRY-RUN diff "${from}" "${to}" ||\
+                cp -L "${to}" "${to}".$(date +%F_%T).old
 	fi
-	if [ "$1" = "P" ]; then
-		ln -sf ${from} ${to}
-	else
-		echo "ln -sf ${from} ${to}"
-	fi
+    DRY-RUN ln -sf ${from} ${to}
 done
