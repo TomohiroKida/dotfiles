@@ -85,9 +85,9 @@ set matchtime=1
 set virtualedit=block
 
 " For vim color design
-colorscheme ron
-set background=dark
+"colorscheme ron
 "set t_Co=256
+set background=dark
 
 " For spell command
 " English character is checked spell.
